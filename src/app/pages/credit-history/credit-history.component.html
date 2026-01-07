@@ -1,0 +1,19 @@
+<h2>Credit History</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Date</th>
+    <th>Type</th>
+    <th>Credits</th>
+    <th>₹</th>
+    <th>Reason</th>
+  </tr>
+
+  <tr *ngFor="let t of history">
+    <td>{{ t.createdAt | date:'short' }}</td>
+    <td>{{ t.type }}</td>
+    <td>{{ t.credits }}</td>
+    <td>{{ t.rupees }}</td>
+    <td>{{ t.reason }}</td>
+  </tr>
+</table>

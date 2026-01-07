@@ -1,0 +1,23 @@
+<h2>Admin – Users</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Credits</th>
+    <th>Role</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let u of users">
+    <td>{{ u.name }}</td>
+    <td>{{ u.email }}</td>
+    <td>{{ u.credits }}</td>
+    <td>{{ u.role }}</td>
+    <td>
+      <input type="number" [(ngModel)]="creditValues[u._id]" />
+      <button (click)="addCredits(u._id)">+</button>
+      <button (click)="deductCredits(u._id)">-</button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,23 @@
+<mat-card class="preview-wrapper">
+
+  <h2>Preview Generated Pages</h2>
+
+  <!-- No files -->
+  <div *ngIf="!files.length" class="empty">
+    No generated pages yet.
+  </div>
+
+  <!-- Preview list -->
+  <div class="preview-list" *ngIf="files.length">
+    <div class="page-box" *ngFor="let f of files">
+      <img [src]="f" alt="Preview Page" class="preview-img" />
+
+      <div class="actions">
+        <button mat-raised-button color="primary" (click)="download(f)">
+          Download
+        </button>
+      </div>
+    </div>
+  </div>
+
+</mat-card>

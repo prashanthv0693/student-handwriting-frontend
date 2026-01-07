@@ -1,0 +1,29 @@
+<h2>Admin – Credit Transactions</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>User</th>
+    <th>Type</th>
+    <th>Credits</th>
+    <th>Rupees  (₹)</th>
+    <th>Reason</th>
+    <th>Date</th>
+  </tr>
+
+  <tr *ngFor="let t of transactions">
+    <td>
+      {{ t.user?.name }} <br>
+      <small>{{ t.user?.email }}</small>
+    </td>
+
+    <td
+      [style.color]="t.type === 'CREDIT' ? 'green' : 'red'">
+      {{ t.type }}
+    </td>
+
+    <td>{{ t.credits }}</td>
+    <td>{{ t.rupees  }}</td>
+    <td>{{ t.reason }}</td>
+    <td>{{ t.createdAt | date:'short' }}</td>
+  </tr>
+</table>

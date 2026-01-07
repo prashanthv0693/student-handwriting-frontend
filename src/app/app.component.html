@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<div class="layout">
+  <!-- Admin Sidebar -->
+  <app-admin-sidebar *ngIf="auth.getRole() === 'ADMIN'"></app-admin-sidebar>
+
+  <!-- Main Content -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<app-footer></app-footer>

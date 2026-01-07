@@ -1,0 +1,16 @@
+<div class="page">
+  <mat-card class="upload-card">
+    <h2>Upload Handwriting</h2>
+
+    <div class="drop-box">
+      <mat-icon>cloud_upload</mat-icon>
+      <p>Drag & Drop or Browse</p>
+      <input type="file" (change)="onFileSelect($event)">
+    </div>
+
+    <button mat-raised-button color="primary"
+      (click)="upload()" [disabled]="loading">
+      Upload
+    </button>
+  </mat-card>
+</div>

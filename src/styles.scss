@@ -1,0 +1,57 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+
+  /* PREMIUM BACKGROUND */
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: #1f2937;
+}
+
+/* Center page content */
+.page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full width buttons */
+.w-full {
+  width: 100%;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Error text */
+.error {
+  margin-top: 10px;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+body.dark mat-card {
+  background: #1e293b;
+  color: #e5e7eb;
+}

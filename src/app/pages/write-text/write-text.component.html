@@ -1,0 +1,53 @@
+<mat-card style="max-width:900px">
+  <h2>Write Assignment</h2>
+
+  <!-- Pen Color -->
+  <mat-form-field class="w-full">
+    <mat-label>Pen Color</mat-label>
+    <mat-select [(ngModel)]="options.penColor" name="pen">
+      <mat-option value="blue">Blue</mat-option>
+      <mat-option value="black">Black</mat-option>
+      <mat-option value="red">Red</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Pages -->
+  <mat-form-field class="w-full">
+    <mat-label>Pages</mat-label>
+    <input matInput type="number" min="1" [(ngModel)]="options.pages" name="pages">
+  </mat-form-field>
+
+  <!-- Text Area -->
+  <mat-form-field class="w-full">
+    <textarea matInput rows="10"
+      placeholder="Type your text here..."
+      [(ngModel)]="text"
+      name="text">
+    </textarea>
+  </mat-form-field>
+
+  <!-- Cost Info -->
+  <p class="cost-info">
+    Pages: {{ options.pages }} <br>
+    Cost: ₹{{ options.pages * 2 }} <br>
+    Your Credits: {{ credits }}
+  </p>
+
+  <!-- Low Credits Warning -->
+  <p *ngIf="options.pages > credits" style="color:red; font-weight:bold">
+    ⚠ Not enough credits to generate {{ options.pages }} page(s)!
+  </p>
+
+  <!-- Buttons -->
+  <div class="flex gap-2">
+    <button mat-raised-button color="primary" 
+            (click)="generate()" 
+            [disabled]="loading || options.pages > credits">
+      Generate
+    </button>
+    <button mat-button (click)="quickSample()">Sample text</button>
+  </div>
+
+  <!-- Loading -->
+  <p *ngIf="loading">Generating... (it may take few seconds)</p>
+</mat-card>

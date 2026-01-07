@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <span routerLink="/" class="logo">Students Handwriting</span>
+  <span class="spacer"></span>
+
+  <a mat-button routerLink="/dashboard">Home</a>
+
+  <ng-container *ngIf="auth.isLoggedIn()">
+    <a mat-button routerLink="/upload-sample">Upload</a>
+    <a mat-button routerLink="/write-text">Write</a>
+    <a mat-button routerLink="/preview">Preview</a>
+    <a mat-button routerLink="/buy-credits">Credits</a>
+
+    <a mat-button *ngIf="auth.isAdmin()" routerLink="/admin/users">
+      Admin
+    </a>
+
+    <button mat-button (click)="logout()">Logout</button>
+  </ng-container>
+
+  <ng-container *ngIf="!auth.isLoggedIn()">
+    <a mat-button routerLink="/login">Login</a>
+    <a mat-button routerLink="/signup">Signup</a>
+  </ng-container>
+</mat-toolbar>
