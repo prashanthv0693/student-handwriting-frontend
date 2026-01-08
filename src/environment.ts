@@ -1,5 +1,7 @@
 export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:5000',
-  razorpayKey: 'rzp_test_xxxxxxxx'
+  production: true,
+  
+  razorpayKey: 'rzp_test_xxxxxxxx',
+  apiUrl: 'https://student-handwriting-backend.onrender.com',
+  mlUrl: 'https://student-handwriting-ml-server.onrender.com'
 };
