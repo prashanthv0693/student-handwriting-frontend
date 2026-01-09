@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://YOUR_SERVER_IP:5000'
+  apiUrl: 'https://student-handwriting-backend.onrender.com',
+  mlUrl: 'https://student-handwriting-ml-server.onrender.com'
 };
+

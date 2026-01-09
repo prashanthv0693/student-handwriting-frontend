@@ -2,11 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from '../../environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-  private API = 'http://localhost:5000/api/auth';
+ private API = `${environment.apiUrl}/api/auth`;
+  
 
   credits$ = new BehaviorSubject<number>(
     Number(localStorage.getItem('credits') || 0)
