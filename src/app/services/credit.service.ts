@@ -1,22 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CreditService {
 
-   API = 'http://localhost:5000/api/credits';
+    private api = `${environment.apiUrl}/api/credits`;
 
   constructor(private http: HttpClient) {}
 
   getHistory() {
-    return this.http.get<any[]>(`${this.API}/history`);
+    return this.http.get<any[]>(`${this.api}/history`);
   }
+
   buyCredits(pack: string) {
-  return this.http.post<any>(
-    `${this.API}/buy`,
-    { pack }
-  );
+    return this.http.post<any>(`${this.api}/buy`, { pack });
+  }
 }
-}
+ 

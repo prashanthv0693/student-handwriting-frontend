@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { environment } from '../../environment';
+import { environment } from '../../environment.prod';
+
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
- private API = `${environment.apiUrl}/api/auth`;
+ private api = `${environment.apiUrl}/api/auth`;
   
 
   credits$ = new BehaviorSubject<number>(
@@ -17,11 +18,11 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   signup(data: any) {
-    return this.http.post(`${this.API}/signup`, data);
+    return this.http.post(`${this.api}/signup`, data);
   }
 
   login(data: any) {
-    return this.http.post<any>(`${this.API}/login`, data);
+    return this.http.post<any>(`${this.api}/login`, data);
   }
 
   saveLogin(token: string, credits: number, role: string) {
